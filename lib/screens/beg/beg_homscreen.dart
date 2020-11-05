@@ -13,18 +13,18 @@ class _beghomeState extends State<beghome> {
   ///Image paths and food names
   final images = [
     "assets/pics/burger.jpg",
-    "assets/pics/chicken_f.jpeg",
-    "assets/pics/chiken_g.jpg",
+    "assets/pics/chicken_g.jpg",
+    "assets/pics/chiken_f.jpeg",
+    "assets/pics/pizza.jpg",
     "assets/pics/spaghetti.jpg",
-    "assets/pics/pizza.jpg"
   ];
 
   final foodNames = [
     "Grilled Burger",
-    "Crispy Fried Chicken",
     "Grilled Chicken",
-    "Pasta",
-    "Pizza"
+    "Crispy Fried Chicken",
+    "Pizza",
+    "Pasta"
   ];
   @override
   Widget build(BuildContext context) {

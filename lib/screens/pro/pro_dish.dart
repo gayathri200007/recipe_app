@@ -21,7 +21,7 @@ class prodish extends StatelessWidget {
                 height: size.height*0.45,
                 child: Image.asset(image, fit: BoxFit.cover,),
               ),
-              tag:'dish1.jpg',
+              tag:image,
             ),
             DraggableScrollableSheet(
                 maxChildSize: 1,

@@ -82,7 +82,7 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 10.0),
                   TextField(
                     decoration: InputDecoration(
-                        labelText: 'EMAIL ',
+                        labelText: 'PASSWORD ',
                         labelStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
@@ -94,7 +94,18 @@ class _RegisterState extends State<Register> {
                   SizedBox(height: 10.0),
                   TextField(
                     decoration: InputDecoration(
-                        labelText: 'PASSWORD ',
+                        labelText: 'CONTACT NO: ',
+                        labelStyle: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.green))),
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: 'EMAIL ',
                         labelStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,

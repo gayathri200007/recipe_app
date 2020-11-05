@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipeapp/screens/pro/pro_home.dart';
 import 'passwordset.dart';
 import 'register.dart';
 class Login extends StatefulWidget {
@@ -103,8 +104,10 @@ class _LoginState extends State<Login> {
                     shadowColor: Colors.greenAccent,
                     color: Colors.green,
                     elevation: 7.0,
-                    child: GestureDetector(
-                      onTap: () {},
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>proHomeScreen()),);
+                      },
                       child: Center(
                         child: Text(
                           'LOGIN',

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'beg_home.dart';
 class beg_reg extends StatefulWidget {
   @override
   _beg_regState createState() => _beg_regState();
@@ -81,7 +83,7 @@ class _beg_regState extends State<beg_reg> {
                   SizedBox(height: 10.0),
                   TextField(
                     decoration: InputDecoration(
-                        labelText: 'EMAIL ',
+                        labelText: 'PASSWORD ',
                         labelStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
@@ -93,7 +95,19 @@ class _beg_regState extends State<beg_reg> {
                   SizedBox(height: 10.0),
                   TextField(
                     decoration: InputDecoration(
-                        labelText: 'PASSWORD ',
+                        labelText: 'CONTACT NO: ',
+                        labelStyle: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.green))),
+
+                  ),
+                  SizedBox(height: 10.0),
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: 'EMAIL',
                         labelStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
@@ -109,8 +123,10 @@ class _beg_regState extends State<beg_reg> {
                         shadowColor: Colors.greenAccent,
                         color: Colors.green,
                         elevation: 7.0,
-                        child: GestureDetector(
-                          onTap: () {},
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>begHomeScreen()),);
+                          },
                           child: Center(
                             child: Text(
                               'SIGNUP',
