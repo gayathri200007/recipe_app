@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipeapp/screens/pro/createview.dart';
 import 'pro_calorie.dart';
-import 'pro_create.dart';
+import 'createview.dart';
 import 'pro_homescreen.dart';
 import 'pro_profile.dart';
 
@@ -14,7 +15,7 @@ class _proHomeScreenState extends State<proHomeScreen> {
   int selectedIndex = 0;
   final List<Widget>_children = [
     prohome(),
-    procreate(),
+    viewcreate(),
     procal(),
     proprofile(),
   ];
