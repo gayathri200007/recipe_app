@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:recipeapp/screens/beg/beg_home.dart';
-import 'beg_passwordset.dart';
 import 'beg_register.dart';
 class beg_Login extends StatefulWidget {
   @override
@@ -77,25 +76,7 @@ class _beg_LoginState extends State<beg_Login> {
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 5.0,),
-                  Container(
-                    alignment: Alignment(1.0, 0.0),
-                    padding: EdgeInsets.only(top: 15.0,left: 20.0),
-                    child: InkWell(
-                      onTap:() {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>beg_pass())
-                        );
-                      },
-                      child: Text('Forgot Password',
-                        style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Montserrat',
-                            decoration: TextDecoration.underline
-                        ),
-                      ),
-                    ),
-                  ),
+
                   SizedBox(height: 40.0),
                   Container(
                     height: 50.0,
