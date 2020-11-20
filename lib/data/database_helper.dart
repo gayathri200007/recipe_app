@@ -42,10 +42,7 @@ class DatabaseHelper {
     await db.execute(
         "CREATE TABLE User(id INTEGER PRIMARY KEY, name TEXT, username TEXT, password TEXT,phno INTEGER,email TEXT, flaglogged TEXT)");
     print("Table is created");
-   /* await db.execute(
-        "CREATE TABLE User1(id1 INTEGER PRIMARY KEY, name1 TEXT, username1 TEXT, password1 TEXT, flaglogged1 TEXT)");
-    print("Table is created");
-  */
+
   }
 
   //insertion
