@@ -43,7 +43,11 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
         Navigator.push(context, MaterialPageRoute(builder: (context)=>begHomeScreen()),);
 
         form.save();
+<<<<<<< HEAD
         //  _presenter.doLogin(_email, _password);
+=======
+      //  _presenter.doLogin(_email, _password);
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
 
       });
     }
@@ -62,12 +66,17 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
       padding: const EdgeInsets.all(8.0),
       child: ButtonTheme(
         padding: EdgeInsets.only(),
+<<<<<<< HEAD
         buttonColor: Colors.greenAccent,
+=======
+        buttonColor: Colors.white70,
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
         height: 50,
         minWidth:350,
         child: RaisedButton(
           child: Text(
             'Login',
+<<<<<<< HEAD
             style: GoogleFonts.aladin(
                 textStyle: TextStyle(
                     fontSize: 25.0,
@@ -121,6 +130,8 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
         child: RaisedButton(
           child: Text(
             'Login as DOCTOR',
+=======
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
             style: TextStyle(
               color: Colors.teal[800],
               fontSize: 20,
@@ -130,6 +141,60 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
             borderRadius: BorderRadius.circular(30),
           ),
           onPressed: () {
+<<<<<<< HEAD
+=======
+            _submit();
+
+          },
+        ),
+      ),
+    );
+
+    var registerBtn = Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ButtonTheme(
+        padding: EdgeInsets.only(),
+        buttonColor: Colors.white70,
+        height: 50,
+        minWidth: 350,
+        child: RaisedButton(
+          child: Text(
+            'Register',
+            style: TextStyle(
+              color: Colors.teal[800],
+              fontSize: 20,
+            ),
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          onPressed: () {
+            _register();
+
+          },
+        ),
+      ),
+    );
+    var docBtn = Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ButtonTheme(
+        padding: EdgeInsets.only(),
+        buttonColor: Colors.white70,
+        height: 50,
+        minWidth: 350,
+        child: RaisedButton(
+          child: Text(
+            'Login as DOCTOR',
+            style: TextStyle(
+              color: Colors.teal[800],
+              fontSize: 20,
+            ),
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          onPressed: () {
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
             //_doc();
 
           },
@@ -137,6 +202,7 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
       ),
     );
     var loginForm = new Column(
+<<<<<<< HEAD
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
@@ -179,6 +245,20 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
                   )
                 ]
             )
+=======
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        new Text(
+          " \n Login",
+          style: GoogleFonts.lato(
+              textStyle:TextStyle(
+                color: Colors.teal[800],
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              )
+          ),
+          textScaleFactor: 2.0,
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
         ),
         new Form(
           key: formKey,
@@ -188,6 +268,7 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
                 padding: const EdgeInsets.all(20.0),
                 child: new TextFormField(
                   onSaved: (val) => _email = val,
+<<<<<<< HEAD
                   decoration: new InputDecoration(labelText: "Name",
                     labelStyle: GoogleFonts.aladin(
                         textStyle: TextStyle(
@@ -217,10 +298,30 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
                     else return null;
                   },
                 ),
+=======
+                  decoration: new InputDecoration(labelText: "Name"),
+                  validator: (String _email){
+                    if (_email.isEmpty) return 'Enter your Name';
+                    else return null;
+                  },
+                ),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: new TextFormField(
+                  onSaved: (val) => _password = val,
+                  decoration: new InputDecoration(labelText: "Password"),
+                  validator: (String _password) {
+                    if (_password.length !=8 && _password.isEmpty) return 'Password length should be 8';
+                    else return null;
+                  },
+                ),
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
               )
             ],
           ),
         ),
+<<<<<<< HEAD
 
         new Padding(
             padding: const EdgeInsets.all(10.0),
@@ -233,11 +334,27 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
             padding: const EdgeInsets.all(10.0),
             child: docBtn),
 **/
+=======
+        new Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: loginBtn),
+        registerBtn,
+        new Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: docBtn),
+
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
       ],
     );
 
     return new Scaffold(
       resizeToAvoidBottomInset: false,
+<<<<<<< HEAD
+=======
+      appBar: new AppBar(
+        title: new Text(" \t Login Page"),
+      ),
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
       key: scaffoldKey,
       body: new Container(
         child: new Center(

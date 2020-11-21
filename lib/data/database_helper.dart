@@ -46,6 +46,7 @@ class DatabaseHelper {
   void _onCreate(Database db, int version) async {
     await db.execute(
         "CREATE TABLE User(id INTEGER PRIMARY KEY, name TEXT, username TEXT, password TEXT,phno INTEGER,email TEXT, flaglogged TEXT)");
+<<<<<<< HEAD
     print("User is created");
     await db.execute(
         "CREATE TABLE Dish(dishid INTEGER PRIMARY KEY, dishname TEXT, time TEXT, cal INTEGER,ingr INTEGER,method TEXT, image TEXT)");
@@ -53,6 +54,10 @@ class DatabaseHelper {
     await db.execute(
         "CREATE TABLE Recipe(recipeid INTEGER PRIMARY KEY, dname TEXT, rec1 TEXT,rec2 TEXT,rec3 TEXT,rec4 TEXT,rec5 TEXT,rec6 TEXT,)");
     print("Recipe is created");
+=======
+    print("Table is created");
+
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
   }
 
   //user table

@@ -79,7 +79,11 @@ class _beghomeState extends State<beghome> {
     "Paprika",
     "Salt",
     "Garlic",
+<<<<<<< HEAD
     "Olive oil",
+=======
+    "Olive oi",
+>>>>>>> 828bb77e98e2b88ef165ff51e5a5d8bd12b60923
     "Tomato pulp",
   ];
   final rec6 = [
