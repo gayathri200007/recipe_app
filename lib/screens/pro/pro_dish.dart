@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 class prodish extends StatelessWidget {
-  final image;
-
+  final image,name,cal,ing,time,rec1,rec2,rec3,rec4,rec5,rec6,rec7,dec;
+  Color iconcolor = Colors.black;
   ///For hero tagging and showing relative image
-  prodish(this.image);
+  prodish(this.image,this.name,this.cal,this.ing,this.time,this.rec1,this.rec2,this.rec3,this.rec4,this.rec5,this.rec6,this.rec7,this.dec);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class prodish extends StatelessWidget {
                 height: size.height*0.45,
                 child: Image.asset(image, fit: BoxFit.cover,),
               ),
-              tag:image,
+              tag:'dish1.jpg',
             ),
             DraggableScrollableSheet(
                 maxChildSize: 1,
@@ -46,8 +46,8 @@ class prodish extends StatelessWidget {
                           Row(
                             children: <Widget>[
                               Text(
-                                "DISH NAME",
-                                style: GoogleFonts.roboto(
+                                "$name",
+                                style: GoogleFonts.poppins(
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold
                                 ),
@@ -57,7 +57,8 @@ class prodish extends StatelessWidget {
                                 icon: Icon(Icons.favorite),
                                 color: Colors.redAccent,
                                 iconSize: 30,
-                                onPressed: () {},
+                                onPressed: () {
+                                },
                               )
                             ],
                           ),
@@ -73,7 +74,7 @@ class prodish extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         border:
-                                        Border.all(color: Colors.grey[200])
+                                        Border.all(color: Colors.grey[400])
                                     ),
                                     padding:
                                     const EdgeInsets.symmetric(vertical: 16),
@@ -81,16 +82,16 @@ class prodish extends StatelessWidget {
                                       children: <Widget>[
                                         Text(
                                           "Calories",
-                                          style:GoogleFonts.roboto(
-                                              fontSize: 20,
-                                              color:Colors.blueGrey
+                                          style:GoogleFonts.poppins(
+                                              fontSize: 18,
+                                              color:Colors.black
                                           ),
                                         ),
                                         Text(
-                                          "Value",
-                                          style:GoogleFonts.roboto(
+                                          "$cal",
+                                          style:GoogleFonts.poppins(
                                               fontSize: 17,
-                                              color:Colors.grey[900],
+                                              color:Colors.black45,
                                               fontWeight: FontWeight.bold
                                           ),
                                         ),
@@ -104,24 +105,24 @@ class prodish extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         border:
-                                        Border.all(color: Colors.grey[200])
+                                        Border.all(color: Colors.grey[400])
                                     ),
                                     padding:
                                     const EdgeInsets.symmetric(vertical: 16),
                                     child: Column(
                                       children: <Widget>[
                                         Text(
-                                          "Ingrediants",
-                                          style:GoogleFonts.roboto(
-                                              fontSize: 20,
-                                              color:Colors.blueGrey
+                                          "Ingredients",
+                                          style:GoogleFonts.poppins(
+                                              fontSize: 18,
+                                              color:Colors.black
                                           ),
                                         ),
                                         Text(
-                                          "Value",
-                                          style:GoogleFonts.roboto(
+                                          "$ing",
+                                          style:GoogleFonts.poppins(
                                               fontSize: 17,
-                                              color:Colors.grey[900],
+                                              color:Colors.black45,
                                               fontWeight: FontWeight.bold
                                           ),
                                         ),
@@ -135,7 +136,7 @@ class prodish extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         border:
-                                        Border.all(color: Colors.grey[200])
+                                        Border.all(color: Colors.grey[400])
                                     ),
                                     padding:
                                     const EdgeInsets.symmetric(vertical: 16),
@@ -143,16 +144,16 @@ class prodish extends StatelessWidget {
                                       children: <Widget>[
                                         Text(
                                           "Time",
-                                          style:GoogleFonts.roboto(
-                                              fontSize: 20,
-                                              color:Colors.blueGrey
+                                          style:GoogleFonts.poppins(
+                                              fontSize: 18,
+                                              color:Colors.black
                                           ),
                                         ),
                                         Text(
-                                          "Value",
-                                          style:GoogleFonts.roboto(
+                                          "$time",
+                                          style:GoogleFonts.poppins(
                                               fontSize:17 ,
-                                              color:Colors.grey[900],
+                                              color:Colors.black45,
                                               fontWeight: FontWeight.bold
                                           ),
                                         ),
@@ -168,7 +169,7 @@ class prodish extends StatelessWidget {
                           ),
                           Text(
                             "RECIPE",
-                            style: GoogleFonts.roboto(
+                            style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
@@ -177,55 +178,77 @@ class prodish extends StatelessWidget {
                             height: 10,
                           ),
                           Text(
-                            'recipe 1',
-                            style:GoogleFonts.roboto(
+                            '$rec1',
+                            style:GoogleFonts.poppins(
                               fontSize: 17,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
                             ),
                           ),
                           SizedBox(
                             height: 8,
                           ),
                           Text(
-                            'recipe 2',
-                            style:GoogleFonts.roboto(
+                            '$rec2',
+                            style:GoogleFonts.poppins(
                               fontSize: 17,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
                             ),
                           ),
                           SizedBox(
                             height: 8,
                           ),
                           Text(
-                            'recipe 3',
-                            style:GoogleFonts.roboto(
+                            '$rec3',
+                            style:GoogleFonts.poppins(
                               fontSize: 17,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
                             ),
                           ),
                           SizedBox(
                             height: 8,
                           ),
                           Text(
-                            'recipe 4',
-                            style:GoogleFonts.roboto(
+                            '$rec4',
+                            style:GoogleFonts.poppins(
                               fontSize: 17,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
                             ),
                           ),
                           SizedBox(
                             height: 8,
                           ),
                           Text(
-                            'recipe 5',
-                            style:GoogleFonts.roboto(
+                            '$rec5',
+                            style:GoogleFonts.poppins(
                               fontSize: 17,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            '$rec6',
+                            style:GoogleFonts.poppins(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            '$rec7',
+                            style:GoogleFonts.poppins(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
                             ),
                           ),
                           SizedBox(
@@ -233,7 +256,7 @@ class prodish extends StatelessWidget {
                           ),
                           Text(
                             "COOKING METHOD",
-                            style: GoogleFonts.roboto(
+                            style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
@@ -242,14 +265,11 @@ class prodish extends StatelessWidget {
                             height: 10,
                           ),
                           Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id iaculis elit. Mauris congue nisl at est placerat egestas. Aliquam bibendum placerat pretium."" Nullam tincidunt massa sed velit sollicitudin pulvinar. Phasellus "
-                                "vitae nisi justo. Quisque pulvinar pretium mauris, eget condimentum felis pretium ut. Cras tempor convallis diam, et consectetur tellus interdum quis. Sed imperdiet auctor metus in vulputate. Interdum et malesuada fames ac "
-                                "ante ipsum primis in faucibus.Phasellus et faucibus sem. Nunc at nibh lacinia mauris ullamcorper euismod malesuada at libero. Cras quis egestas est. Donec dapibus tincidunt tincidunt. Maecenas est enim, interdum sed eleifend a, "
-                                "hendrerit eleifend diam.",
-                            style: GoogleFonts.roboto(
+                            '$dec',
+                            style: GoogleFonts.poppins(
                               fontSize: 17,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black45,
                             ),
                           ),
                         ],

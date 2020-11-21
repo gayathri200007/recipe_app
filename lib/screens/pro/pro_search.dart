@@ -58,7 +58,7 @@ class _prosearchState extends State<prosearch> {
                     color: Colors.black54,
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(
-                          builder: (context) => prodish('https://10play.com.au/ip/s3/2020/07/17/61c7678ea0b0ab42351df809d932a8d8-975791.jpg?image-profile=image_max&io=landscape')
+                         // builder: (context) => prodish('https://10play.com.au/ip/s3/2020/07/17/61c7678ea0b0ab42351df809d932a8d8-975791.jpg?image-profile=image_max&io=landscape')
                       ));
                     },
                   ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:recipeapp/data/database_helper.dart';
 import 'package:recipeapp/models/user.dart';
@@ -61,15 +62,16 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
       padding: const EdgeInsets.all(8.0),
       child: ButtonTheme(
         padding: EdgeInsets.only(),
-        buttonColor: Colors.white70,
+        buttonColor: Colors.greenAccent,
         height: 50,
         minWidth:350,
         child: RaisedButton(
           child: Text(
             'Login',
-            style: TextStyle(
-              color: Colors.teal[800],
-              fontSize: 20,
+            style: GoogleFonts.aladin(
+                textStyle: TextStyle(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold)
             ),
           ),
           shape: RoundedRectangleBorder(
@@ -87,15 +89,16 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
       padding: const EdgeInsets.all(8.0),
       child: ButtonTheme(
         padding: EdgeInsets.only(),
-        buttonColor: Colors.white70,
+        buttonColor: Colors.greenAccent,
         height: 50,
         minWidth: 350,
         child: RaisedButton(
           child: Text(
             'Register',
-            style: TextStyle(
-              color: Colors.teal[800],
-              fontSize: 20,
+            style: GoogleFonts.aladin(
+                textStyle: TextStyle(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold)
             ),
           ),
           shape: RoundedRectangleBorder(
@@ -134,18 +137,48 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
       ),
     );
     var loginForm = new Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        new Text(
-          " \n Login",
-          style: GoogleFonts.lato(
-              textStyle:TextStyle(
-                color: Colors.teal[800],
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              )
-          ),
-          textScaleFactor: 2.0,
+        Container(
+            child: Stack(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(15.0,80.0,0.0,0.0),
+                    child: Text(
+                        'Hello',
+                        style: GoogleFonts.aladin(
+                            textStyle: TextStyle(
+                            fontSize: 80.0,
+                            fontWeight: FontWeight.bold)
+                        ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(16.0,170.0,0.0,0.0),
+                    child: Text(
+                        'There',
+                      style: GoogleFonts.aladin(
+                          textStyle: TextStyle(
+                              fontSize: 80.0,
+                              fontWeight: FontWeight.bold)
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(170.0,170.0,0.0,0.0),
+                    child: Text(
+                        '.',
+                      style: GoogleFonts.aladin(
+                          textStyle: TextStyle(
+                              fontSize: 80.0,
+                              fontWeight: FontWeight.bold,
+                            color: Colors.greenAccent,
+                          )
+                      ),
+                    ),
+                  )
+                ]
+            )
         ),
         new Form(
           key: formKey,
@@ -155,7 +188,13 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
                 padding: const EdgeInsets.all(20.0),
                 child: new TextFormField(
                   onSaved: (val) => _email = val,
-                  decoration: new InputDecoration(labelText: "Name"),
+                  decoration: new InputDecoration(labelText: "Name",
+                    labelStyle: GoogleFonts.aladin(
+                        textStyle: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold)
+                    ),
+                  ),
                   validator: (String _email){
                     if (_email.isEmpty) return 'Enter your Name';
                     else return null;
@@ -166,7 +205,13 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
                 padding: const EdgeInsets.all(20.0),
                 child: new TextFormField(
                   onSaved: (val) => _password = val,
-                  decoration: new InputDecoration(labelText: "Password"),
+                  decoration: new InputDecoration(labelText: "Password",
+                    labelStyle: GoogleFonts.aladin(
+                        textStyle: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold)
+                    ),
+                  ),
                   validator: (String _password) {
                     if (_password.length !=8 && _password.isEmpty) return 'Password length should be 8';
                     else return null;
@@ -176,22 +221,23 @@ class _beg_LoginState extends State<beg_Login> implements LoginPageContract {
             ],
           ),
         ),
+
         new Padding(
             padding: const EdgeInsets.all(10.0),
             child: loginBtn),
-        registerBtn,
         new Padding(
             padding: const EdgeInsets.all(10.0),
-            child: docBtn),
+            child: registerBtn,),
 
+        /**new Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: docBtn),
+**/
       ],
     );
 
     return new Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: new AppBar(
-        title: new Text(" \t Login Page"),
-      ),
       key: scaffoldKey,
       body: new Container(
         child: new Center(

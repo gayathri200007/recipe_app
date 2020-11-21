@@ -176,7 +176,7 @@ class _profavState extends State<profav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image1)),);
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image1)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
@@ -292,7 +292,7 @@ class _profavState extends State<profav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image2)),);
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image2)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
@@ -408,7 +408,7 @@ class _profavState extends State<profav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image3)),);
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image3)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
@@ -524,7 +524,7 @@ class _profavState extends State<profav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image4)),);
+                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>prodish(image4)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),

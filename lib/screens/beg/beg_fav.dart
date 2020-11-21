@@ -177,7 +177,7 @@ class _begfavState extends State<begfav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image1)),);
+                     //Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image1)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
@@ -293,7 +293,7 @@ class _begfavState extends State<begfav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image2)),);
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image2)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
@@ -409,7 +409,7 @@ class _begfavState extends State<begfav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image3)),);
+                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image3)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
@@ -525,7 +525,7 @@ class _begfavState extends State<begfav> {
                   ),
                   RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image4)),);
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>begdish(image4)),);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),

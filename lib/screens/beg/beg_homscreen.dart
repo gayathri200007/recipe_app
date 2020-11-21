@@ -219,9 +219,7 @@ class _beghomeState extends State<beghome> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => begdish(images[4 - index])
-                            ));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => begdish(images[4 - index],foodNames[4 - index],cal[4 - index],ing[4 - index],time[4 - index],rec1[4 - index],rec2[4 - index],rec3[4 - index],rec4[4 - index],rec5[4 - index],rec6[4 - index],rec7[4 - index],dec[4 - index])));
                           },
                           child: AspectRatio(
                               aspectRatio: 0.9 / 1,
