@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'screens/beg/beg_login.dart';
+import 'screens/beg/beg_register.dart';
 import 'screens/mainscreen.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'screens/mainscreen.dart';
+import 'screens/mainscreen.dart';
+import 'screens/pro/loginpage.dart';
+import 'screens/pro/register.dart';
 
 
 void main() {
@@ -11,67 +18,25 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-
+final routes={
+  '/mainscreen': (BuildContext context) => new MainScreen(),
+  '/beg': (BuildContext context) => new beg_Login(),
+  '/pro': (BuildContext context) => new Login(),
+  '/begreg': (BuildContext context) => new beg_reg(),
+  '/proreg': (BuildContext context) => new Register(),
+};
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: MainScreen(),
     );
   }
 }
 
-class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
 
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/pics/splash.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              RaisedButton(
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                color: Colors.redAccent,
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()),);
-                },
-                child: Text(
-                  'Get Started',
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white,
-                    letterSpacing: 3,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 
 

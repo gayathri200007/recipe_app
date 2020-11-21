@@ -1,194 +1,188 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/app%20by%20flut/doc/recipe_app/lib/screens/pro/pro_home.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:recipeapp/screens/beg/beg_login.dart';
+import 'package:recipeapp/data/database_helper.dart';
+import 'package:recipeapp/models/user.dart';
+
+import 'loginpage.dart';
+
 class Register extends StatefulWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  _RegisterState createState() => new _RegisterState();
 }
 
-class _RegisterState extends State<Register> {
+class _RegisterState  extends State<Register> {
+  BuildContext _ctx;
+  bool _isLoading = false;
+  final formKey = new GlobalKey<FormState>();
+  final scaffoldKey = new GlobalKey<ScaffoldState>();
+  String _name, _username, gender, email, _password;
+
+  int  phno,age;
+
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        resizeToAvoidBottomInset: false,
-        resizeToAvoidBottomPadding: false,
-        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-            Widget>[
-          Container(
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.fromLTRB(15.0, 70.0, 0.0, 0.0),
-                  child: Text(
-                    'Signup',
-                    style:
-                    TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(260.0, 75.0, 0.0, 0.0),
-                  child: Text(
-                    '.',
-                    style: TextStyle(
-                        fontSize: 80.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green),
-                  ),
-                )
-              ],
+    _ctx = context;
+    var loginBtn =  Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ButtonTheme(
+        padding: EdgeInsets.only(),
+        buttonColor: Colors.white70,
+        height: 50,
+        minWidth: 350,
+        child: RaisedButton(
+          child: Text(
+            'Register',
+            style: TextStyle(
+              color: Colors.teal[800],
+              fontSize: 20,
             ),
           ),
-          Container(
-              padding: EdgeInsets.only(top: 25.0, left: 20.0, right: 20.0),
-              child: Column(
-                children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'FIRST NAME',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                        // hintText: 'EMAIL',
-                        // hintStyle: ,
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
-                  ),
-                  SizedBox(height: 10.0),
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'LAST NAME',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                        // hintText: 'EMAIL',
-                        // hintStyle: ,
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
-                  ),
-                  SizedBox(height: 10.0),
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'USERNAME (Should be unique)',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                        // hintText: 'EMAIL',
-                        // hintStyle: ,
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
-                  ),
-                  SizedBox(height: 10.0),
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'PASSWORD ',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
-                    obscureText: true,
-                  ),
-                  SizedBox(height: 10.0),
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'CONTACT NO: ',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
-                  ),
-                  SizedBox(height: 10.0),
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'EMAIL ',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.green))),
-                  ),
-                  SizedBox(height: 35.0),
-                  Container(
-                      height: 40.0,
-                      child: Material(
-                        borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: Colors.greenAccent,
-                        color: Colors.green,
-                        elevation: 7.0,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>proHomeScreen()),);
-                          },
-                          child: Center(
-                            child: Text(
-                              'SIGNUP',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Montserrat',
-                                  fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )),
-                  SizedBox(height: 20.0),
-                  Container(
-                    height: 40.0,
-                    color: Colors.transparent,
-                    child: Material(
-                          borderRadius: BorderRadius.circular(25.0),
-                          color: Colors.white,
-                          elevation: 9.0,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child:
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          onPressed: () {
+            _submit();
 
-                        Center(
-                          child: Text('Go Back',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Montserrat',
-                                  fontSize: 18,
-                              ),
-                          ),
-                        ),
+          },
+        ),
+      ),
+    );
 
 
-                      ),
-                    ),
-                  ),
-                ],
-              )),
-          // SizedBox(height: 15.0),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: <Widget>[
-          //     Text(
-          //       'New to Spotify?',
-          //       style: TextStyle(
-          //         fontFamily: 'Montserrat',
-          //       ),
-          //     ),
-          //     SizedBox(width: 5.0),
-          //     InkWell(
-          //       child: Text('Register',
-          //           style: TextStyle(
-          //               color: Colors.green,
-          //               fontFamily: 'Montserrat',
-          //               fontWeight: FontWeight.bold,
-          //               decoration: TextDecoration.underline)),
-          //     )
-          //   ],
-          // )
-        ]));
+
+    var loginForm = new Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        new Text(
+          "Register",
+          style: GoogleFonts.lato(
+              textStyle:TextStyle(
+                color: Colors.teal[800],
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              )
+          ),
+          textScaleFactor: 2.0,
+        ),
+        new Form(
+          key: formKey,
+          child: new Column(
+            children: <Widget>[
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new TextFormField(
+                  keyboardType: TextInputType.text,
+                  onSaved: (val) => _name = val,
+                  decoration: new InputDecoration(labelText: "Name"),
+                  validator: (String name) {
+                    if (name.isEmpty)
+                      return 'Enter your name';
+                    else
+                      return null;
+                  },
+                ),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new TextFormField(
+
+                  onSaved: (val) => _username = val,
+                  decoration: new InputDecoration(labelText: "User Name"),
+                  validator: (String name) {
+                    if (name.isEmpty)
+                      return 'Enter your name';
+                    else
+                      return null;
+                  },
+                ),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new TextFormField(
+                  onSaved: (val) => _password = val,
+                  decoration: new InputDecoration(labelText: "Password"),
+                  validator: (String _password) {
+                    if (_password.length != 8 && _password.isEmpty)
+                      return 'Password length should be 8';
+                    else
+                      return null;
+                  },
+
+                ),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new TextFormField(
+                  keyboardType: TextInputType.number,
+                  onSaved: (val) => phno = int.parse(val),
+                  decoration: new InputDecoration(labelText: "phone Number"),
+                  validator: (String phno) {
+                    if (phno.length != 10 && phno.isEmpty)
+                      return 'Invalid mobile number';
+                    else
+                      return null;
+                  },
+                ),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: new TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  onSaved: (val) => email = val,
+                  decoration: new InputDecoration(labelText:"Email"),
+                  validator: (String email) {
+                    if (email.isEmpty)
+                      return 'Invalid Email';
+                    else
+                      return null;
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+        loginBtn
+      ],
+    );
+
+    return new Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: new AppBar(
+          title: new Text("Register"),
+        ),
+        key: scaffoldKey,
+        body: SingleChildScrollView(
+          child: new Container(
+            child: new Center(
+              child: loginForm,
+            ),
+          ),
+        )
+    );
+  }
+
+  void _showSnackBar(String text) {
+    scaffoldKey.currentState.showSnackBar(new SnackBar(
+      content: new Text(text),
+    ));
+  }
+
+  void _submit() {
+    final form = formKey.currentState;
+
+    if (form.validate()) {
+      setState(() {
+        _isLoading = true;
+        form.save();
+        var user = new User(_name, _username, _password,phno,email, null);
+        var db = new DatabaseHelper();
+        db.saveUser(user);
+        _isLoading = false;
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()),);
+        if (formKey.currentState.validate()) {}
+      });
+    }
   }
 }

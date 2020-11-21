@@ -9,6 +9,21 @@ const img='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?au
 class _procreateState extends State<procreate> {
   @override
   Widget build(BuildContext context) {
+    var createBtn={
+      new RaisedButton(
+        child: Text(
+          'Create',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        onPressed: () {},
+      ),
+    };
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomPadding: false,
@@ -67,28 +82,17 @@ class _procreateState extends State<procreate> {
                                       decoration: BoxDecoration(
                                           border: Border(bottom: BorderSide(color: Colors.grey[100]))
                                       ),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "Name of the Recipe",
                                             hintStyle: TextStyle(color: Colors.grey[900])
                                         ),
                                       ),
-                                      /**padding: EdgeInsets.fromLTRB(15.0, 35.0, 15.0, 10.0),
-                                          child: Material(
-                                          elevation: 10.0,
-                                          borderRadius: BorderRadius.circular(25.0),
-                                          child: TextFormField(
-                                          decoration: InputDecoration(
-                                          hintText: 'diiii',
-                                          hintStyle: TextStyle(color: Colors.grey)
-                                          ),
-                                          ),
-                                          ),**/
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(8.0),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "Time",
@@ -98,7 +102,7 @@ class _procreateState extends State<procreate> {
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(8.0),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "No of Ingredients",
@@ -108,7 +112,7 @@ class _procreateState extends State<procreate> {
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(8.0),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "Recipe 1",
@@ -128,7 +132,7 @@ class _procreateState extends State<procreate> {
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(8.0),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "Recipe 3",
@@ -139,7 +143,7 @@ class _procreateState extends State<procreate> {
 
                                     Container(
                                       padding: EdgeInsets.all(8.0),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "Calories",
@@ -149,7 +153,7 @@ class _procreateState extends State<procreate> {
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(8.0),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "Cooking Method",
@@ -159,7 +163,7 @@ class _procreateState extends State<procreate> {
                                     ),
                                     Container(
                                       padding: EdgeInsets.all(8.0),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             border: InputBorder.none,
                                             hintText: "Add Image URL",
@@ -179,23 +183,9 @@ class _procreateState extends State<procreate> {
                                 buttonColor: Colors.tealAccent[500],
                                 height: 50,
                                 minWidth: double.infinity,
-                                child: RaisedButton(
-                                  child: Text(
-                                    'Create',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  onPressed: () {},
-                                ),
+                                //child: createBtn
                               ),
                             ),
-                            /**SizedBox(height: 70,),
-                                FadeAnimation(1.5, Text("Forgot Password?", style: TextStyle(color: Color.fromRGBO(143, 148, 251, 1)),)),**/
                           ],
                         ),
                       )
